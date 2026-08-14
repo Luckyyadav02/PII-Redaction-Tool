@@ -2,10 +2,6 @@ services:
   - type: web
     name: pii-redaction-tool
     runtime: python
-    rootDir: pii_redaction_tool/pii_redaction_tool
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --timeout 120
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
     healthCheckPath: /
