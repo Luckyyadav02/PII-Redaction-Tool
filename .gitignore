@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Uploads / generated outputs
+*.docx
+uploaded_input.docx
+redacted_output*.docx
+
+# Audit logs (may contain PII)
+audit_log*.csv
+
+# Environment
+.env
+.env.*
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Zip archives
+*.zip
