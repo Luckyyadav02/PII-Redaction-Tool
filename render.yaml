@@ -3,5 +3,5 @@ services:
     name: pii-redaction-tool
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --timeout 120
-    healthCheckPath: /
+    startCommand: gunicorn app:app --timeout 300 --workers 1 --threads 2
+    healthCheckPath: /ping

@@ -6,6 +6,8 @@ Fixes applied for Render deployment:
   - spaCy model + Redactor loaded once at startup, not per request
   - Temp files written to /tmp/ (writable on all platforms)
   - Gunicorn-compatible (no debug mode in production)
+  - /ping endpoint for Render health check / keep-alive
+  - 300s worker timeout to handle large documents
 """
 
 import os
@@ -495,6 +497,12 @@ def redact():
                 os.remove(path)
             except OSError:
                 pass
+
+
+@app.route("/ping")
+def ping():
+    """Health check / keep-alive endpoint."""
+    return "pong", 200
 
 
 # ---------------------------------------------------------------------------
